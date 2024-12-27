@@ -20,3 +20,7 @@ body{
     background-color: #c427fd;
     padding:30px;
 }
+
+li{
+    list-style-type: none;
+}
