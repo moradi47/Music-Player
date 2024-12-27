@@ -24,3 +24,10 @@ body{
 li{
     list-style-type: none;
 }
+
+.list{
+    width:30%;
+    height: 435px;
+    background-color: #fff;
+    padding:20px
+}
