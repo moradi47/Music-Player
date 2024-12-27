@@ -53,3 +53,10 @@ li{
     height: 435px;
     /* border: 1px solid #000; */
 }
+
+.progressBar{
+    width:300px;
+    height: 3px;
+    background-color:#fff;
+    border-radius: 5px;
+}
