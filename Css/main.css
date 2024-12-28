@@ -26,3 +26,10 @@ body{
     align-items: center;
     padding:20px;
 }
+
+.sidebar{
+    width: 30%;
+    height: 85vh;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
