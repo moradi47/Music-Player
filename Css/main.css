@@ -47,6 +47,7 @@ body{
     height:85vh;
     opacity:0.8;
     border-radius: 10px;
+    margin-top: 150px;
 }
 
 li{
@@ -78,4 +79,31 @@ li{
     font-size: 18px;
     background-color: #6B62D6;
     color:#111832;
+}
+
+.song-data{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 40px;
+    color:#9DA1BC;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.poster{
+    width:350px;
+    height:250px;
+}
+
+.poster-image{
+    width:350px;
+    height:250px;
+}
+
+.data{
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: flex-start;
+    gap: 10px;
 }
