@@ -40,3 +40,7 @@ body{
     width:75%;
     height:85vh;
 }
+
+li{
+    list-style-type: none;
+}
