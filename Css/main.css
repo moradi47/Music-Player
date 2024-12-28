@@ -14,3 +14,11 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.container{
+    width:70%;
+    height: 90vh;
+    background-color: #000;
+    opacity:.3;
+    border-radius: 20px;
+}
