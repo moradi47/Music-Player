@@ -77,11 +77,11 @@ playBtn.addEventListener('click', function(){
 })
 
 previousBtn.addEventListener('click', function(){
-    audioIndex ++;
+    audioIndex --;
     console.log(audioIndex);
 
-    if(audioIndex > musics.length -1){
-        audioIndex = 0;
+    if(audioIndex < 0){
+        audioIndex = musics.length -1;
     }
 
     console.log(musics[audioIndex].src)
