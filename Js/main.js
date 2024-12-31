@@ -30,14 +30,21 @@ const musics = [
         artist:'',
     }
 ]
-
+// data music
 let liElem = document.querySelectorAll('.music');
 let imageElem = document.querySelector('.poster-image');
 let audioElem = document.querySelector('.audio');
 let artistName = document.querySelector('.artist');
 let nameMusic = document.querySelector('.name-music');
 
-console.log(artistName);
+//button
+let playBtn = document.querySelector('.play-btn');
+let playIcon = document.querySelector('.play');
+let pauseIcon = document.querySelector('.pause');
+
+let isPlaying = false;
+
+console.log(playBtn);
 
 liElem.forEach((li)=>{
     li.addEventListener('click', function(event){
@@ -52,4 +59,16 @@ liElem.forEach((li)=>{
             }
         })
     })
+})
+
+playBtn.addEventListener('click', function(){
+    if(isPlaying){
+        isPlaying = false;
+        audioElem.pause();
+        playBtn.firstChild.nextSibling.className = "fa fa-play";
+    }else{
+        isPlaying = true;
+        audioElem.play();
+        playBtn.firstChild.nextSibling.className = "fa fa-pause";
+    }
 })
