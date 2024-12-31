@@ -41,10 +41,13 @@ let nameMusic = document.querySelector('.name-music');
 let playBtn = document.querySelector('.play-btn');
 let playIcon = document.querySelector('.play');
 let pauseIcon = document.querySelector('.pause');
-
+let previousBtn = document.querySelector('.previous-btn');
+let nextBtn = document.querySelector('.next-btn');
 let isPlaying = false;
+let audioIndex = 0;
 
-console.log(playBtn);
+//
+console.log()
 
 liElem.forEach((li)=>{
     li.addEventListener('click', function(event){
@@ -71,4 +74,17 @@ playBtn.addEventListener('click', function(){
         audioElem.play();
         playBtn.firstChild.nextSibling.className = "fa fa-pause";
     }
+})
+
+previousBtn.addEventListener('click', function(){
+    audioIndex ++;
+    console.log(audioIndex);
+
+    if(audioIndex > musics.length -1){
+        audioIndex = 0;
+    }
+
+    console.log(musics[audioIndex].src)
+    audioElem.src = musics[audioIndex].src;
+    audioElem.play();
 })
