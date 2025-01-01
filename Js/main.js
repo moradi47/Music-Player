@@ -51,6 +51,14 @@ let progressBar = document.querySelector('.progressbar');
 let durationElem = document.querySelector('.time-total');
 let currentTimeElem = document.querySelector('.time-current');
 
+//dark Mood
+
+let moodBtn = document.querySelector('.mood');
+let sidebar = document.querySelector('.sidebar');
+let containerMain  = document.querySelector('.container');
+let root = document.documentElement;
+let isDark = true;
+
 console.log(progressBar);
 
 liElem.forEach((li)=>{
@@ -141,3 +149,29 @@ audioElem.addEventListener('timeupdate', function(event){
     }
 })
 
+moodBtn.addEventListener('click', function(){
+    if(isDark){
+        console.log('dark')
+
+        isDark = false;
+        moodBtn.firstChild.nextSibling.className = 'fa fa-moon';
+        moodBtn.style.right = '60px';
+        containerMain.style.backgroundImage = 'linear-gradient(to bottom, #131931, #141A30, #141C33, #111832)';
+        sidebar.style.backgroundImage = 'linear-gradient(to bottom, #1A2846, #1F2944, #1D243E, #202743)';
+        root.style.setProperty('--main', '#202743');
+        root.style.setProperty('--dark', '#111832');
+        root.style.setProperty('--light', '#9da1bc');
+        root.style.setProperty('--hover', '#6b62d6');
+    }else{
+        console.log('light')
+        isDark = true;
+        moodBtn.firstChild.nextSibling.className = 'fa fa-sun';
+        moodBtn.style.right = '-1px';
+        containerMain.style.backgroundImage = 'linear-gradient(to bottom, #B9D7EA, #D6E4F0, #D6E6F2, #F5F5F5 )';
+        sidebar.style.backgroundImage = 'linear-gradient(to bottom , #FBFBFB, #F2F9FF, #CDE8E5)';
+        root.style.setProperty('--main', '#B9D7EA');
+        root.style.setProperty('--dark', '#4C585B');
+        root.style.setProperty('--light', '#758694');
+        root.style.setProperty('--hover', '#D9EAFD');
+    }
+})
