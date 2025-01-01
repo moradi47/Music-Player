@@ -1,3 +1,11 @@
+:root{
+    --main: #202743;
+    --dark: #111832;
+    --light: #9da1bc;
+    --hover: #6b62d6;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -11,6 +19,7 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--light);
 }
 
 .sidebar{
@@ -21,7 +30,6 @@
 }
 
 .header{
-    color:#9DA1BC;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 100;
     font-size: 20px;
@@ -52,7 +60,6 @@ li{
     align-items: center;
     gap:10px;
     padding: 5px;
-    color:#9DA1BC;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -68,8 +75,8 @@ li{
 
 .music:hover{
     font-size: 18px;
-    background-color: #6B62D6;
-    color:#111832;
+    background-color: var(--hover);
+    color: var(--dark);
 }
 
 .song-data{
@@ -77,7 +84,6 @@ li{
     justify-content: flex-start;
     align-items: flex-end;
     gap: 40px;
-    color:#9DA1BC;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 80px;
 }
@@ -112,13 +118,12 @@ li{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    color:#9DA1BC;
     margin-bottom: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .progress-container{
-    background: #9DA1BC;
+    background: var(--light);
     border-radius: 5px;
     cursor:pointer;
     margin-bottom: 40px;
@@ -127,7 +132,7 @@ li{
 }
 
 .progressbar{
-    background:#6B62D6;
+    background: var(--hover);
     border-radius: 5px;
     height:100%;
     width:0%;
@@ -140,22 +145,23 @@ li{
     align-items: center;
     gap: 20px;
     cursor: pointer;
+    margin-right: 120px;
 }
 
 .previous-btn, .next-btn {
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    color:#9DA1BC;
-    background-color: #111832;
+    background-color: var(--hover);
+    border: 2px solid var(--light);
 }
 
 .play-btn{
     width: 60px;
     height: 60px;
     border-radius: 100%;
-    color:#9DA1BC;
-    background-color: #111832;
+    border: 2px solid var(--light);
+    background-color: var(--hover);
 }
 
 .dark-mood{
@@ -170,14 +176,20 @@ li{
 .box-mood{
     width: 100px;
     height: 40px;
-    background-color: #202743;
+    background-color: var(--main);
     border-radius: 30px;
-    
+    position:relative;
+    border: 2px solid var(--light);
 }
 
 .mood{
     width:40px;
     height:40px;
-    background-color: #9DA1BC;
+    background-color: var(--hover);
+    border: 2px solid var(--light);
     border-radius: 30px;
+    position:absolute;
+    top: -2px;
+    right:58px;
+    transition: width 0.5s linear;
 }
