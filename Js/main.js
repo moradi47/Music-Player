@@ -46,8 +46,12 @@ let nextBtn = document.querySelector('.next-btn');
 let isPlaying = false;
 let audioIndex = 0;
 
-//
-console.log()
+//progressBar
+let progressBar = document.querySelector('.progressbar');
+let durationElem = document.querySelector('.time-total');
+let currentTimeElem = document.querySelector('.time-current');
+
+console.log(progressBar);
 
 liElem.forEach((li)=>{
     li.addEventListener('click', function(event){
@@ -69,6 +73,7 @@ playBtn.addEventListener('click', function(){
         isPlaying = false;
         audioElem.pause();
         playBtn.firstChild.nextSibling.className = "fa fa-play";
+
     }else{
         isPlaying = true;
         audioElem.play();
@@ -78,13 +83,61 @@ playBtn.addEventListener('click', function(){
 
 previousBtn.addEventListener('click', function(){
     audioIndex --;
-    console.log(audioIndex);
 
     if(audioIndex < 0){
         audioIndex = musics.length -1;
     }
 
-    console.log(musics[audioIndex].src)
     audioElem.src = musics[audioIndex].src;
     audioElem.play();
 })
+
+nextBtn.addEventListener('click', function(){
+    audioIndex ++;
+
+    if(audioIndex > musics.length -1){
+        audioIndex = 0;
+    }
+
+    audioElem.src = musics[audioIndex].src;
+    audioElem.play();
+})
+
+progressBar.addEventListener("click", function(event){
+    const width = this.clientWidth;
+    const clickX = event.offsetX;
+    const duration = audioElem.duration;
+    audioElem.currentTime = (clickX/width) * duration;
+})
+
+audioElem.addEventListener('timeupdate', function(event){
+
+    if(isPlaying){
+        const duration = event.srcElement.duration;
+        const currentTime = event.srcElement.currentTime;
+
+        const progressPercent = (currentTime/duration) * 100;
+        progressBar.style.width = progressPercent + "%";
+
+        width = progressPercent;
+
+        const durationMinutes = Math.floor(duration/60);
+        let durationSeconds = Math.floor(duration % 60);
+        if(durationSeconds < 10){
+            durationSeconds = "0" + durationSeconds; 
+        }
+        if(durationSeconds){
+            durationElem.textContent = durationMinutes + ":" + durationSeconds;
+        }
+
+        const currentMinutes = Math.floor(currentTime / 60);
+        let currentSeconds = Math.floor(currentTime % 60);
+
+        if(currentSeconds < 10){
+            currentSeconds = "0" + currentSeconds;
+        }
+
+        currentTimeElem.textContent = currentMinutes + ":" + currentSeconds;
+    }
+})
+
