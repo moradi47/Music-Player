@@ -172,6 +172,6 @@ moodBtn.addEventListener('click', function(){
         root.style.setProperty('--main', '#B9D7EA');
         root.style.setProperty('--dark', '#4C585B');
         root.style.setProperty('--light', '#758694');
-        root.style.setProperty('--hover', '#D9EAFD');
+        root.style.setProperty('--hover', '#B9B4C7');
     }
 })
